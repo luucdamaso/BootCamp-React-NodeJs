@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 2 de HTML e CSS</title>
+</head>
+<body>
+        <h2>Imagem</h2>
+        <figure>
+            <img width="500px" height="300px" src="./midias/eu-a-patroa-e-as-criancas.jpeg" alt="Capa da serie Eu a Patroa e as Crianças">
+            <figcaption>Capa da serie Eu a Patroa e as Crianças</figcaption>
+        </figure>
+        <h2>Vídeo</h2>
+        <video width="500px" height="300px" src="./midias/abertura-chaves.mp4" controls="true"></video>
+        <h2>Audio</h2>
+        <audio src="./midias/abertura-um-maluco-no-pedaco.mp3" controls="true"></audio>
+        <hr>
+        <h2>Listas</h2>
+        <h3>Listas não ordenadas (lista de compras)</h3>
+        <!--unordered list -> Lista não ordenada-->
+        <!--List Item -> Item da Lista-->
+        <ul>
+            <li>Farinha de trigo</li>
+            <li>Leite</li>
+            <li>Ovos</li>
+            <li>Açucar</li>
+        </ul>
+        <br>
+        <h3>Lista ordenada</h3>
+        <!-- Ordened List -> Lista ordenada-->
+        <ol>
+           <li>Misture todos os ingredientes em uma tigela</li>
+           <li>Aqueça o forno em 180° C</li>
+           <li>Coloque a mistura na forma e leve ao forno</li>
+           <li>Espere esfriar por 20 minutos e sirva em fatias</li>
+        </ol>
+        <br>
+        <h3>lista aninhada</h3>
+        <ul>
+            <li>Café da manha
+                <ul>
+                    <li>Pão</li>
+                    <li>Ovos cozidos</li>
+                    <li>Café</li>
+                </ul>
+            </li>
+            <li>Almoço
+                <ul>
+                    <li>Arroz</li>
+                    <li>Feijão</li>
+                    <li>Lasanha</li>
+                </ul>
+            </li>
+            <li>Café da Tarde
+                <ul>
+                    <li>Bolo</li>
+                    <li>Suco</li>
+                    <li>Café</li>
+                </ul>
+            </li>
+            <li>Janta
+                <ol>
+                    <li>Pizza</li>
+                    <li>Hamburguer</li>
+                    <li>Refri</li>
+                </ol>
+            </li>
+        </ul>
+        <h4>Como lavar as roupas</h4>
+        <ol>
+            <li>recolha suas roupas
+                <ol>
+                    <li>verificar os comodos</li>
+                    <li>pegar no cesto</li>
+                    <li>separar por cor</li>
+                    <li>separar os tipos</li>
+                </ol>
+            </li>
+            <li> Leve a maquina 
+                <ol>
+                    <li>Verifique os bolsos</li>
+                    <li>Coloque os produtos no dispenser</li>
+                </ol>
+            </li>
+        </ol>
+
+        <h3>Listas de descrição</h3>
+        <dl>
+            <dt>HTML</dt>
+        <dd>Linguagem de marcação para a crianção de conteúdo de um site.</dd>
+        <dt>CSS</dt>
+        <dd>linguagem de marcação para a crianção de design de um site.</dd>
+        <dt>Javascript</dt>
+        <dd>Linguagem de programção para a criação de interatividade de um site.</dd>
+        </dl>
+
+        <!--
+            Atributos Especificos  (src, href, width, target)   
+            Atributos Globais (id. class, title)
+        -->
+
+        <hr> <br><br>
+
+        <h2>Tabelas</h2>
+        <!-- <th> -> Table Head -->
+        <!-- <tr> -> Table Row -->
+        <!-- <td> -> Table Data -->
+        <table border="1">
+            <colgroup>
+                <col style="width: 150px">
+                <col style="width: 150px">
+                <col style="width: 80px">
+                <col style="width: 100px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Área</th>
+                    <th>Idade</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lucas D</td>
+                    <td>Full Stack</td>
+                    <td>25 anos</td>
+                    <td rowspan="3">São Paulo</td>
+                </tr>
+                <tr>
+                    <td>Almir</td>
+                    <td>Full Stack</td>
+                    <td>23 anos</td>
+                </tr>
+                <tr>
+                    <td>Igor</td>
+                    <td>Eng. de dados</td>
+                    <td>30 anos</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Professores da SoulCode</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Times Brasileiros</td>
+                </tr>
+            </tfoot>
+        </table>
+</body>
+</html>

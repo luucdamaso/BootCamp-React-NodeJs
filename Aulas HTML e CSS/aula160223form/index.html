@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de HTML e CSS</title>
+</head>
+<body>
+    <h3>Cadastro de perfil</h3>
+    <form action="">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+
+            <label for="cNome">Nome:</label>
+            <input type="text" id="cNome" name="nome"> <br>
+            <label for="cSenha">Senha:</label>
+            <input type="password" id="cSenha" name="senha"> <br>
+            <label for="cemail">E-mail:</label>
+            <input type="email" id="cemail" name="email"> <br>
+            <label for="cTel">Telefone:</label>
+            <input type="tel" id="cTel" name="telefone"> <br>
+            <label for="cInst">URL do Instagram:</label>
+            <input type="url" id="cInt" name="urlinsta"> <br>
+            <label for="cIdade">Idade:</label>
+            <input type="number" id="cIdade" name="idade"><br>
+            <label for="cNasc">Data de nascimento:</label>
+            <input type="date" id="cNasc" name="data de nascimento"><br>
+            <label for="cHora">Hora de nascimento:</label>
+            <input type="time" id="cHora" disabled> <br>
+            <label for="cHora">Data e hora nascimento:</label>
+            <input type="datetime-local" id="cHora" name="hora do nascimento"> <br>
+        
+            <label for="cFoto">Foto de perfil:</label>
+                  <input name="avatar" id="cFoto" type="file" multiple accept=".jpeg, .png" />
+                  <br />
+            
+                  Aceito os termos de uso da plataforma.
+                  <input type="checkbox" required />
+                  <br />
+            
+                  Interesses: 
+                  Humanas <input name="interesses" type="checkbox" /><br />
+            
+                  Exatas <input name="interesses" type="checkbox" /><br />
+            
+                  Biológicas <input name="interesses" type="checkbox" /><br />
+            
+                  <br />
+        </fieldset>
+
+        <fieldset>
+        <legend>Outras informações</legend>
+        
+                  Escolha sua cor favorita:
+                  <input name="corfavorita" type="color" />
+                  <br />
+            
+                  Sexo:
+                  <br />
+            
+                  Masculino: <input type="radio" name="sexo" />
+                  <br />
+            
+                  Feminino: <input type="radio" name="sexo" />
+                  <br />
+            
+                  Nível de Inglês: 0<input
+            name="nivelingles"
+            type="range"
+            min="0"
+            max="10"
+            list="makers"
+                  />10
+                  <datalist id="makers">
+            <option value="0"></option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+            <option value="6"></option>
+            <option value="7"></option>
+            <option value="8"></option>
+            <option value="9"></option>
+            <option value="10"></option>
+                  </datalist>
+            
+                  <br />
+                  Escondido: (veja no inspecionar)
+                  <input name="escondido" type="hidden" value="135" />
+                  <br />
+                  Conte um pouco sobre você: <br />
+                  <textarea
+            cols="30"
+            rows="10"
+            placeholder="digite seu texto aqui."
+                  ></textarea>
+                  <br />
+                  Escolaridade:
+                  <select name="escolaridade">
+            <option disabled selected>Selecione um estado</option>
+            <option>Ensino Fundamental Completo</option>
+            <option>Ensino Medio Completo</option>
+            <option>Ensino Superior Completo</option>
+                  </select> <br>
+        </fieldset>
+
+      <!--<input type="submit" value="Enviar">--> <!-- submeter -->
+      <button type="submit">Enviar</button>
+      <button>Não faz nada</button>
+      <button type="reset">Limpar</button>
+
+    </form>
+  </body>
+</html>
