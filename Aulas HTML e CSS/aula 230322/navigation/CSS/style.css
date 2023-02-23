@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/* SINTAXE 
+    seletor {propriedade: valor;}
+*/
+
+/* SELETOR
+    tag -> nome da TAG de um documento que queira aplicar um estilo
+    id -> Identificar de forma única um elemento de um documento
+    class -> Identificar um elemtno de um conjunto em um documento
+*/
+
+#p-1 {
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
+#p-1 i {
+    color: red;
+}
+
+#p-2 {
+    font-size: 30px;
+}
+
+h1 {
+    color: purple;
+ }
+
+ .artigo {
+    width: 300px; /*largura*/
+ }
+
+ .artigo img {
+    width: 100%;
+ }
+
+ .artigo small {
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
