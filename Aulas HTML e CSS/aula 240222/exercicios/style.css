@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+}
+
+section > article {
+    display: flex;
+}
+
+div {
+    margin: 30px 25px;
+    transition: 0.5s;
+}
+
+div:hover {
+    transform:scale(1.05,1.05);
+}
+
+section > article > div {
+    width: 300px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+section > article > div > img {
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+section > article > div > p {
+    padding: 20px 30px;
+}
