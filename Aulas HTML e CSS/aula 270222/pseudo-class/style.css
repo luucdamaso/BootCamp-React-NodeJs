@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h1 {
+    padding: 10px 10px;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+}
+
+li {
+    padding: 1px;
+}
+
+a {
+    display: block;
+    line-height: 40px;
+    width: 100px;
+    padding: 2px;
+    background-color: blueviolet;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+/* pseudo classe */
+a:active {
+    color: black;
+}
+
+a:visited {
+    background-color: rgb(95, 29, 157);
+}
+
+a:hover{
+    background-color: rgb(157, 86, 223);
+    transform: scale(1.05, 1.05);
+}
