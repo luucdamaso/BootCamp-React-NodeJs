@@ -1,0 +1,17 @@
+@charset "UTF-8";
+.border {
+    padding: 20px;
+    border: 2px solid black;
+}
+
+.bloco {
+    display: block;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.none {
+    display: none;
+}
