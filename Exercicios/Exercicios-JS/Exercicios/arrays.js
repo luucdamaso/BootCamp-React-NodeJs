@@ -48,9 +48,11 @@ function maioresQueMedia(numbers) {
 
 //5. Crie uma função que recebe um array com os nomes dos alunos de uma turma, e outro array que recebe a lista de presença com os nomes. In-dique quais alunos faltaram.
 
+
+
 //6. Crie uma função que recebe um array de números e retorna um array com todos os valores elevados ao quadrado.
 
-//7. Crie uma função que recebe um array de nomes de arquivos, e recebe também uma extensão, a função deve retornar apenas os nomes de ar-quivo que forem dessa extensão.
+//7. Crie uma função que recebe um array de nomes de arquivos, e recebe também uma extensão, a função deve retornar apenas os nomes de arquivo que forem dessa extensão.
 
 //8. Crie uma função que recebe um número, em seguida retorne um array de números aleatórios com o tamanho especificado pelo número.
 
