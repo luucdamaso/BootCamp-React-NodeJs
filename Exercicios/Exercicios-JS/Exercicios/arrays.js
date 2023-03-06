@@ -132,3 +132,38 @@ numeroAleatorio(numero);
 
 //9. Refaça os itens 1, 2, 6, e 7. Utilize as funções map, filter e forEach.
 
+const dna1 = ['t', 'c', 'g', 'a', 't', 'c', 'g'];
+const dna2 = [];
+
+// function polimerase(dna) {
+//   for (let i = 0; i < dna.length; i++) {
+//     let base = dna[i]
+//     if (base == 't' ) {
+//       dna2.push('a')
+//     } else if (base == 'a' ) {
+//       dna2.push('t')
+//     } else if (base == 'c' ) {
+//       dna2.push('g')
+//     } else if (base == 'g' ){
+//       dna2.push('c')
+//     } else {
+//       dna2.push('ERRO')
+//     }
+//   }
+// }
+// polimerase(dna1);
+// console.log(dna2);
+
+dna1.map((dna) => {
+  if (dna == 't' ) {
+          dna2.push('a')
+        } else if (dna == 'a' ) {
+          dna2.push('t')
+        } else if (dna == 'c' ) {
+          dna2.push('g')
+        } else if (dna == 'g' ){
+          dna2.push('c')
+        } else {
+          dna2.push('ERRO')
+      }});
+      console.log(dna2);
