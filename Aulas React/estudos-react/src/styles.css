@@ -45,3 +45,76 @@ img:hover {
 .mensagem:hover {
     transform: scale(1.03, 1.03);
 }
+
+.bodyblog {
+    background-color: white;
+    padding: 8px;
+    border: 1px solid rgba(128, 128, 128, 0.138);
+    box-shadow: 0px 0px 10px 10px rgba(116, 116, 116, 0.081);
+    border-radius: 8px;
+    width: 95%;
+    height: 90%;
+    margin: 8px auto;
+    transition: 0.8s;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    flex-wrap: wrap;
+}
+
+.bodypostagem {
+    background-color: white;
+    padding: 8px;
+    border: 1px solid rgba(128, 128, 128, 0.138);
+    box-shadow: 0px 0px 10px 10px rgba(116, 116, 116, 0.081);
+    border-radius: 8px;
+    width: 450px;
+    height: 90%;
+    margin: 8px auto;
+    transition: 0.8s;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    flex-wrap: wrap;
+}
+
+.postagem {
+    background-color: white;
+    padding: 8px;
+    border: 1px solid rgba(128, 128, 128, 0.138);
+    box-shadow: 0px 0px 10px 10px rgba(116, 116, 116, 0.081);
+    border-radius: 8px;
+    width: 400px;
+    margin: 8px auto;
+    transition: 0.8s;
+}
+
+.postagem:hover {
+    transform: scale(1.03, 1.03);
+}
+
+.principal {
+    font-family: Arial, Helvetica, sans-serif;
+    color:darkblue;
+    margin: 0px 0px 5px 0px;
+}
+
+.texto {
+    font-style: italic;
+}
+
+.rodape {
+    width: 100%;
+    height: 30px;
+    background-color: #efefef;
+    text-align: center;
+    box-shadow: 0px 0px 10px 10px rgba(116, 116, 116, 0.081);
+}
+
+.direitos {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 540;
+    color: rgb(134, 131, 131);
+    box-shadow: 0px 0px 10px 10px rgba(116, 116, 116, 0.081);
+    padding-top: 6px;
+}
