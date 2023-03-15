@@ -8,6 +8,8 @@ import { SalaAula } from "./components/SalaAula/SalaAula";
 
 import { ImparPar } from "./components/ImparPar/ImparPar";
 
+import { ProductList } from "./components/ProductList/ProductList";
+
 export function App() {
     return (
         <>
@@ -15,8 +17,9 @@ export function App() {
             {/* <ListaFuncionarios/> */}
             {/* <NavBar logado = {true} nomeUsuario='Jose'/> */}
             {/* <NavBar logado = {false} /> */}
-            <SalaAula/>
-            <ImparPar numero={8}/>
+            {/* <SalaAula/>
+            <ImparPar numero={8}/> */}
+            <ProductList/>
         </>
     );
 }
