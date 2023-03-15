@@ -1,3 +1,5 @@
+import { Titulo } from "../Titulo/Titulo";
+
 export function Postagem() {
     const linkImagem = "https://picsum.photos/350";
     const TituloPostagem = "Titulo da minha Postagem"
@@ -6,7 +8,8 @@ export function Postagem() {
     return (
         <section className="bodypostagem">
             <div className="postagem">
-        <h2 className="principal">{TituloPostagem.toUpperCase()}</h2>
+        <Titulo></Titulo>
+        <h2 className="titulo">{TituloPostagem.toUpperCase()}</h2>
         <img src={linkImagem}/>
         <p className="paragrafo">
           Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as

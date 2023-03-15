@@ -1,0 +1,21 @@
+.tabela-func {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 10px auto;
+  }
+  
+  .tabela-func td,
+  .tabela-func th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .tabela-func th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #046aaa;
+    color: white;
+  }
+  

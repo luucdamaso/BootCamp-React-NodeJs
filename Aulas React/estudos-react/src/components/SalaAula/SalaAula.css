@@ -1,0 +1,32 @@
+.box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.aluno-card-red {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid rgba(172, 3, 3, 0.273);
+    background:linear-gradient(rgba(172, 3, 3, 0.273), white);
+    box-shadow: 0px 0px 5px 5px rgba(172, 3, 3, 0.273);
+    width: 300px;
+    margin: 8px;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.8s;
+}
+
+.aluno-card {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid rgba(3, 172, 9, 0.995);
+    background:linear-gradient(rgba(3, 172, 9, 0.273), white);
+    box-shadow: 0px 0px 5px 5px rgba(3, 172, 9, 0.273);
+    width: 300px;
+    margin: 8px;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.8s;
+}
+
+.aluno-card:hover, .aluno-card-red:hover{
+    transform: scale(1.02, 1.02);
+}

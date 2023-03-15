@@ -1,10 +1,6 @@
 //Trazer de outro arquivo/biblioteca alguma função ou variável
+import { App } from "./App";
 import { createRoot } from "react-dom/client";
-import { Blog } from "./components/Blog";
-import { Footer } from "./components/Footer";
-import { Mensagem } from "./components/Mensagem";
-import { Postagem } from "./components/Postagem";
-import { Titulo } from "./components/Titulo";
 // Linka o arquivo css ao projeto do React
 import './styles.css';
 
@@ -16,30 +12,29 @@ const root = createRoot(rootElement);
 
 // Inserimos o conteúdo da página
 root.render(
-  <div>
-    <Titulo></Titulo>
-    <Mensagem></Mensagem>
-    <Postagem></Postagem>
-    <Blog></Blog>
-    <Footer></Footer>
-  </div>
-);
-
-// let nome = 'Almir';
-
+    <App/>
+)
 // root.render(
-//     <section>
-//       <h1>React é top</h1>
-//       <img width='350px' src="https://picsum.photos/200" />
-//       <p>
-//         Olá, tudo bem? <br /> <b>{nome.toUpperCase()}</b>
-//       </p>
-//       <p>Soma: {1 + 1}</p>
-//     </section>
+//     <div>
+//       {/* <Titulo></Titulo>
+//       <Mensagem></Mensagem>
+//       <Postagem></Postagem>
+//       <Blog></Blog>
+//       <Footer></Footer> */}
+//       <Titulo borderLeftColor="#FF0000" backgroundColor="#FF000022" color="black">
+//         Musicas
+//       </Titulo>
+//       <ListMusics></ListMusics>
+//       <Titulo borderLeftColor="#00FF00" backgroundColor="#00FF0022" color="black">
+//         Tarefas
+//       </Titulo>
+//       <Task title="Beber Água" status="Feito" deadline="14/03/2023"></Task>
+//       <Task title="Marcar reunião" status="Atrasado" deadline="14/03/2023"></Task>
+//       <Task title="Jantar comemorativo" status="Pendente" deadline="14/03/2023"></Task>
+//       <Titulo color="black">
+//         React é uma biblioteca para a criação de interfaces visuais web.
+//       </Titulo>
+//     </div>
 //   );
 
-// JSX = JavaScript Extesion
-// No fim o HTML é convertido para JavaScript (por baixo dos panos)
-// JSX = Açúcar Sintático
 
-// Dentro das chaves podemos escrever expressões JS!
