@@ -1,0 +1,44 @@
+.contador {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f8f8f89b;
+    width: 250px;
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.contador h1 {
+    background-color: white;
+    font-size: 3em;
+}
+
+.contador div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border: 3px solid black;
+    width: 80px;
+    height: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bolder;
+    font-size: 1.5em;
+    border-radius: 6px;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
+button:active {
+    transform: scale(1.015);
+}
