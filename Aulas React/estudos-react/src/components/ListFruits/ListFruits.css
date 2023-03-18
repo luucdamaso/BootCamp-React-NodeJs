@@ -1,10 +1,14 @@
-.app {
+.frutas {
     width: 70%;
     height: 70%;
     margin: 20px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    transition: 0.8s;
 }
 
 h1 {

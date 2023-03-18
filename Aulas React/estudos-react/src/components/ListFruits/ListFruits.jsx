@@ -8,9 +8,9 @@ export const ListFruits = () => {
     const lowerBusca = busca.toLocaleLowerCase();
     const frutasFiltradas = frutas.filter((fruta) => fruta.nome.toLowerCase().includes(lowerBusca))
     return (
-        <div className="app">
+        <div className="frutas">
             <h1>Lista de frutas</h1>
-            <input type="text" value={busca} onChange={(e) => setBusca(e.target.value)}/>
+            <input type="text" placeholder="Digite o nome de uma fruta" value={busca} onChange={(e) => setBusca(e.target.value)}/>
             {busca === '' ? (''): (<ul>
                 {frutasFiltradas.map((fruta) => ( <li key={fruta.nome}><img src={fruta.imagem} alt="" /></li>))}
             </ul>)}

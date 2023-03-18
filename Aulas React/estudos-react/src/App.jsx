@@ -1,10 +1,9 @@
-
-import { ListFruits } from "./components/ListFruits/ListFruits";
+import { QuestaoQuiz } from "./components/QuestaoQuiz/QuestaoQuiz";
 
 export function App() {
     return (
         <>
-            <ListFruits/>
+            <QuestaoQuiz/>
         </>
     );
 }

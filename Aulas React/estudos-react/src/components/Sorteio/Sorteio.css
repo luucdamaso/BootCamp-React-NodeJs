@@ -1,0 +1,33 @@
+.sorteio {
+    width: 200px;
+    height: 200px;
+    border: 3px solid black;
+    margin: 10px auto;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.number-par {
+    margin-top: 30px;
+    color: rgb(0, 117, 0);
+    width: 100%;
+    height: 20%;
+}
+
+.number-impar {
+    margin-top: 30px;
+    color: rgb(216, 216, 0);
+    width: 100%;
+    height: 20%;
+}
+
+button {
+    background-color: black;
+    color: white;
+    font-size: 1em;
+    height: 30px;
+    width: 80%;
+    border-radius: 8px;
+}
