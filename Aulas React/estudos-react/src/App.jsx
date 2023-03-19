@@ -1,9 +1,10 @@
-import { QuestaoQuiz } from "./components/QuestaoQuiz/QuestaoQuiz";
+import { Carrossel } from "./components/Carrossel/Carrosel";
+
 
 export function App() {
     return (
         <>
-            <QuestaoQuiz/>
+            <Carrossel/>
         </>
     );
 }

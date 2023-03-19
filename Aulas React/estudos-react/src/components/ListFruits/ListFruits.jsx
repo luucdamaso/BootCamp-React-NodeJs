@@ -2,7 +2,6 @@ import { useState } from "react";
 import { frutas } from "../../data/frutas.js";
 import './ListFruits.css';
 
-
 export const ListFruits = () => {
     const [busca, setBusca] = useState('');
     const lowerBusca = busca.toLocaleLowerCase();

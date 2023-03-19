@@ -1,0 +1,19 @@
+.calc {
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 200px;
+}
+
+input {
+    margin: 3px;
+}
+
+button {
+    margin: 5px;
+}
