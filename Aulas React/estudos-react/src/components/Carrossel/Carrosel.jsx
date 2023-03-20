@@ -2,6 +2,7 @@ import './Carrossel.css';
 import { useState } from 'react';
 import { conteudo } from '../ConteudoCarrossel/ConteudoCarrolssel';
 
+
 export const Carrossel = () => {
     let [contador, setContador] = useState(0);
     
@@ -30,11 +31,11 @@ export const Carrossel = () => {
                 <img src={conteudo[contador].imagem} alt="" />
             </div>
             <div className='carrossel-buttons'>
-                <button onClick={prev}>
-                    Prev
+                <button onClick={() => contador > 4 ? setContador(0) : setContador(contador + 1)}>
+                    {`<`}
                 </button>
                 <button onClick={next}>
-                    Next
+                    {`>`}
                 </button>
             </div>
         </div>

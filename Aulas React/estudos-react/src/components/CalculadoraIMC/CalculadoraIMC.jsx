@@ -1,24 +1,54 @@
-import './CalculadoraIMC.css';
-import { useState } from 'react';
+import { useEffect, useState } from "react";
+import "./CalculadoraIMC.css";
 
-export const CalculadoraIMC = () => {
-    const [peso, setPeso] = useState('');
-    const [altura, setAltura] = useState('');
-    const [imc, setIMC] = useState('');
+export function CalculadoraIMC() {
+  const [peso, setPeso] = useState('');
+  const [altura, setAltura] = useState('');
+  // -1 indica que não houve calculo
+  const [imc, setImc] = useState(-1);
 
-    const calculoIMC = () => {
-        setIMC((peso / (altura * altura)).toFixed(2));
-    }
+  useEffect(() => {
+    const resultado = peso / (altura * altura);
+    setImc(resultado);
+  }, [peso, altura]);
 
+  // function calcularImc() {
+  //   const resultado = peso / (altura * altura);
+  //   setImc(resultado);
+  // }
 
-    return (
-        <div className='calc'>
-            <input type="number" placeholder='Peso' onChange={(e) => {setPeso(e.target.value)}}/>
-            <input type="number" placeholder='Altura' onChange={(e) => {setAltura(e.target.value)}}/>
-            <button onClick={calculoIMC}>
-                Resultado
-            </button>
-            <h3>{imc}</h3>
-        </div>
-    )
+  function limpar() {
+    setPeso(0);
+    setAltura(0);
+    setImc(-1);
+  }
+
+  return (
+    <div>
+      <h3>Calculadora de IMC</h3>
+      <input
+        type="number"
+        placeholder="Digite o peso"
+        onChange={(evento) => setPeso(evento.target.value)}
+        value={peso}
+      />
+      <input
+        type="number"
+        placeholder="Digite a altura"
+        onChange={(evento) => setAltura(evento.target.value)}
+        value={altura}
+      />
+      <br />
+      {/* <button onClick={calcularImc}>Calcular</button> */}
+      <button onClick={limpar}>Limpar</button>
+      <hr />
+      {(imc !== Infinity && !isNaN(imc)) && <p>O seu IMC é: {imc.toFixed(2)}</p>}
+    </div>
+  );
 }
+
+// Capturando dados do input
+
+// - onChange
+// - Função para coletar o valor
+// - Estado pra armazenar

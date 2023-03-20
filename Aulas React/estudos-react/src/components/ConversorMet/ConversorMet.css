@@ -1,0 +1,10 @@
+.conversor-metros {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 8px;
+}
+
+input {
+    width: 205px;
+}
