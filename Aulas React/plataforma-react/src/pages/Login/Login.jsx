@@ -43,7 +43,7 @@ export const Login = () => {
                       placeholder="Senha"
                       required
                     />{" "}
-                    <button class="btn bg-white text-muted">
+                    <button onClick={() => {}} class="btn bg-white text-muted">
                       {" "}
                       <span class="far fa-eye-slash"></span>{" "}
                     </button>{" "}

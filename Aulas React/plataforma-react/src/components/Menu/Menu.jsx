@@ -6,7 +6,7 @@ export function Menu() {
     <div className="menu">
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar.Brand href="#home">Menu</Navbar.Brand>
           <Nav className="me-auto">
             <Button variant="link">
               <Link to="/">Home</Link>
@@ -21,7 +21,7 @@ export function Menu() {
               <Link to="/usuarios">Usuários</Link>
             </Button>
             <Button variant="link">
-              <Link to="/Login">Login</Link>
+              <Link to="/login">Login</Link>
             </Button>
             <Form className="d-flex ms-5" >
             <Form.Control

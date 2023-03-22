@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+Button {
+  margin: 5px !important;
+}
+
+Link{
+  color: black !important;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
