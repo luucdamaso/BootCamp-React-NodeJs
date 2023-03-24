@@ -1,16 +1,6 @@
 import "./Login.css";
 import React from "react";
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody,
-  MDBInput,
-  MDBCheckbox,
-  MDBIcon,
-} from "mdb-react-ui-kit";
+import { usuarios } from "../../data/usuarios";
 
 export const Login = () => {
   return (
@@ -28,6 +18,7 @@ export const Login = () => {
                     {" "}
                     <span class="far fa-user p-2"></span>{" "}
                     <input
+                      id="campoEmail"
                       type="text"
                       placeholder="Email"
                       required
@@ -39,11 +30,32 @@ export const Login = () => {
                     {" "}
                     <span class="fas fa-lock px-2"></span>{" "}
                     <input
+                      id="campoSenha"
                       type="password"
                       placeholder="Senha"
                       required
                     />{" "}
-                    <button onClick={() => {}} class="btn bg-white text-muted">
+                    <button
+                      onClick={() => {
+                        const email =
+                          document.getElementById("campoEmail").value;
+                        const senha =
+                          document.getElementById("campoSenha").value;
+                        let usuarioValido = usuarios.find(
+                          (usuario) => usuario.email === email
+                        );
+                        if (usuarioValido !== undefined) {
+                          if (usuarioValido.senha === senha) {
+                            alert("Usuario e senha corretos");
+                          } else {
+                            alert("Senha incorreta");
+                          }
+                        } else {
+                          alert("Usuario não existe");
+                        }
+                      }}
+                      class="btn bg-white text-muted"
+                    >
                       {" "}
                       <span class="far fa-eye-slash"></span>{" "}
                     </button>{" "}
@@ -77,21 +89,28 @@ export const Login = () => {
                   <img
                     src="https://www.dpreview.com/files/p/articles/4698742202/facebook.jpeg"
                     alt=""
-                  />{""}
+                  />
+                  {""}
                 </a>{" "}
                 <a href="https://www.google.com" target="_blank" class="px-2">
                   {" "}
                   <img
                     src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"
                     alt=""
-                  />{""}
+                  />
+                  {""}
                 </a>{" "}
-                <a href="https://github.com/luucdamaso" target="_blank" class="px-2" />{" "}
+                <a
+                  href="https://github.com/luucdamaso"
+                  target="_blank"
+                  class="px-2"
+                />{" "}
                 <img
                   src="https://www.freepnglogos.com/uploads/512x512-logo-png/512x512-logo-github-icon-35.png"
                   alt=""
                 />{" "}
-                <a />{""}
+                <a />
+                {""}
               </div>
             </div>
           </div>

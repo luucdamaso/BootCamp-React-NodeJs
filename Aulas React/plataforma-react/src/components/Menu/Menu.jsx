@@ -23,15 +23,18 @@ export function Menu() {
             <Button variant="link">
               <Link to="/login">Login</Link>
             </Button>
-            <Form className="d-flex ms-5" >
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="dark">Search</Button>
-          </Form>
+            <Button variant="link">
+              <Link to="/pokemon">Pokemon</Link>
+            </Button>
+            <Button variant="link">
+              <Link to="/superherois">Super-Herois</Link>
+            </Button>
+            <Button variant="link">
+              <Link to="/equipamentos">Equipamentos</Link>
+            </Button>
+            <Button variant="link">
+              <Link to="/cadastro">Cadastro</Link>
+            </Button>
           </Nav>
         </Container>
       </Navbar>
