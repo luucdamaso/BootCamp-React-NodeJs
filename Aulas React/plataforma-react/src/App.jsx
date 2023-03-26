@@ -17,7 +17,7 @@ import { Perfil } from "./pages/Perfil/Perfil";
 import { Pokemon } from "./pages/Pokemon/Pokemon";
 import { CadastroSuperHerois } from "./pages/CadastroSuperHerois/CadastroSuperHerois";
 import { Equipamentos } from "./pages/Equipamentos/Equipamentos";
-import { Cadastro } from "./pages/Cadastro/Cadastro";
+import { Programadores } from "./pages/Cadastro/Cadastro";
 
 function App() {
   return (
@@ -38,9 +38,9 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/perfil/:id" element={<Perfil/>}/>
               <Route path="/pokemon" element={<Pokemon/>} />
-              <Route path="/superherois" element={<CadastroSuperHerois/>} />
-              <Route path="/equipamentos" element={<Equipamentos/>} />
-              <Route path="/cadastro" element={<Cadastro/>}/>
+              <Route path="/herois" element={<CadastroSuperHerois/>} />
+              <Route path="/eletronicos" element={<Equipamentos/>} />
+              <Route path="/programadores" element={<Programadores/>}/>
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>

@@ -1,121 +1,80 @@
+import { Card, Button, Form, Toast, ToastContainer } from "react-bootstrap";
 import "./Login.css";
-import React from "react";
 import { usuarios } from "../../data/usuarios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export const Login = () => {
+export function Login() {
+  const [show, setShow] = useState(false);
+  const navigate = useNavigate();
+
+  function signin() {
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
+    const usuario = usuarios.find(
+      (u) => u.email === email && u.senha === senha
+    );
+    if (usuario) {
+      navigate("/");
+    } else {
+      setShow(true);
+    }
+  }
+
   return (
-    <div class="container-menu">
-      <div class="row">
-        <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
-          <div class="panel border bg-white">
-            <div class="panel-heading">
-              <h3 class="pt-3 font-weight-bold">Login</h3>
-            </div>
-            <div class="panel-body p-3">
-              <form action="login_script.php" method="POST">
-                <div class="form-group py-2">
-                  <div class="input-field">
-                    {" "}
-                    <span class="far fa-user p-2"></span>{" "}
-                    <input
-                      id="campoEmail"
-                      type="text"
-                      placeholder="Email"
-                      required
-                    />{" "}
-                  </div>
-                </div>
-                <div class="form-group py-1 pb-2">
-                  <div class="input-field">
-                    {" "}
-                    <span class="fas fa-lock px-2"></span>{" "}
-                    <input
-                      id="campoSenha"
-                      type="password"
-                      placeholder="Senha"
-                      required
-                    />{" "}
-                    <button
-                      onClick={() => {
-                        const email =
-                          document.getElementById("campoEmail").value;
-                        const senha =
-                          document.getElementById("campoSenha").value;
-                        let usuarioValido = usuarios.find(
-                          (usuario) => usuario.email === email
-                        );
-                        if (usuarioValido !== undefined) {
-                          if (usuarioValido.senha === senha) {
-                            alert("Usuario e senha corretos");
-                          } else {
-                            alert("Senha incorreta");
-                          }
-                        } else {
-                          alert("Usuario não existe");
-                        }
-                      }}
-                      class="btn bg-white text-muted"
-                    >
-                      {" "}
-                      <span class="far fa-eye-slash"></span>{" "}
-                    </button>{" "}
-                  </div>
-                </div>
-                <div class="form-inline">
-                  {" "}
-                  <input type="checkbox" name="remember" id="remember" />{" "}
-                  <label for="remember" class="text-muted">
-                    Me lembre
-                  </label>{" "}
-                  <a href="#" id="forgot" class="font-weight-bold">
-                    Esqueceu a senha?
-                  </a>{" "}
-                </div>
-                <div class="btn btn-primary btn-block mt-3">Login</div>
-                <div class="text-center pt-4 text-muted">
-                  Já possui conta? <a href="#">Entre</a>{" "}
-                </div>
-              </form>
-            </div>
-            <div class="mx-3 my-2 py-2 bordert">
-              <div class="text-center py-3">
-                {" "}
-                <a
-                  href="https://wwww.facebook.com"
-                  target="_blank"
-                  class="px-2"
-                >
-                  {""}
-                  <img
-                    src="https://www.dpreview.com/files/p/articles/4698742202/facebook.jpeg"
-                    alt=""
-                  />
-                  {""}
-                </a>{" "}
-                <a href="https://www.google.com" target="_blank" class="px-2">
-                  {" "}
-                  <img
-                    src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"
-                    alt=""
-                  />
-                  {""}
-                </a>{" "}
-                <a
-                  href="https://github.com/luucdamaso"
-                  target="_blank"
-                  class="px-2"
-                />{" "}
-                <img
-                  src="https://www.freepnglogos.com/uploads/512x512-logo-png/512x512-logo-github-icon-35.png"
-                  alt=""
-                />{" "}
-                <a />
-                {""}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="login">
+      <Card style={{ width: "25rem" }}>
+        <Card.Header>
+          <h2 className="text-center">Login</h2>
+        </Card.Header>
+        <Card.Body>
+          <Form>
+            <Button className="w-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-google"
+                viewBox="0 0 16 16"
+              >
+                <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+              </svg>
+            </Button>
+            <Form.Label className="mt-3" htmlFor="email">
+              E-mail
+            </Form.Label>
+            <Form.Control
+              type="email"
+              id="email"
+              placeholder="Entre com e-mail"
+            />
+            <Form.Label className="mt-3" htmlFor="senha">
+              Senha
+            </Form.Label>
+            <Form.Control
+              type="password"
+              id="senha"
+              placeholder="Entre com senha"
+            />
+            <Button className="w-100 mt-3" onClick={signin}>
+              Enviar
+            </Button>
+          </Form>
+        </Card.Body>
+        <Card.Footer className="text-muted">
+          <a href="#">Cadastre-se</a>
+        </Card.Footer>
+      </Card>
+
+      <ToastContainer position="bottom-end" className="pb-3">
+        <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
+          <Toast.Header>
+            <strong>E-mail ou senha inválido!</strong>
+          </Toast.Header>
+          <Toast.Body>Verique o e-mail e senha digitado.</Toast.Body>
+        </Toast>
+      </ToastContainer>
     </div>
   );
-};
+}

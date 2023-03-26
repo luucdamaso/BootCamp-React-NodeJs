@@ -1,80 +1,46 @@
+import { useState } from "react";
+import { Alert } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
-export const CadastroSuperHerois = () => {
-  const { register, handleSubmit } = useForm();
+export function CadastroSuperHerois() {
 
-  const onSubmitHeros = (data) => {
-    console.log(data);
-    alert(`
-        Nome do Super Heroi: ${data.nome} \n 
-        Poder: ${data.poder} \n
-        Fraqueza: ${data.fraqueza} \n
-        Historia: ${data.historia} \n
-        `);
-  };
+    const { register, handleSubmit } = useForm();
+    const [heroi, setHeroi] = useState();
 
-  return (
-    <section class="mb-10">
-      <div class="row">
-        <div class="col-md-9 col-lg-7 col-xl-5 mx-auto text-center">
-          <h4 class="mb-4">Cadastro de super Herois</h4>
-          <form onSubmit={handleSubmit(onSubmitHeros)} noValidate>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-outline mb-4">
-                  <input
-                    type="text"
-                    id="nome"
-                    class="form-control "
-                    {...register("nome")}
-                  />
-                  <label class="form-label" for="nome">
-                    Nome
-                  </label>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-outline mb-4">
-                  <input
-                    type="text"
-                    id="poder"
-                    class="form-control"
-                    {...register("poder")}
-                  />
-                  <label class="form-label" for="poder">
-                    Poder
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-outline mb-4">
-              <input
-                type="text"
-                id="fraqueza"
-                class="form-control"
-                {...register("fraqueza")}
-              />
-              <label class="form-label" for="fraqueza">
-                Fraqueza
-              </label>
-            </div>
-            <div class="form-outline mb-4">
-              <textarea
-                class="form-control"
-                id="historia"
-                rows="4"
-                {...register("historia")}
-              ></textarea>
-              <label class="form-label" for="historia">
-                Historia
-              </label>
-            </div>
-            <button type="submit" class={"btn btn-dark btn-block"}>
-              Send message
-            </button>
-          </form>
+    function onSubmitHeroi(heroi) {
+        setHeroi(heroi)
+    }
+
+    return (
+        <div className="herois">
+            <h1>Cadastro de Super Heróis</h1>
+            <form onSubmit={handleSubmit(onSubmitHeroi)}>
+                <label htmlFor="nome">Nome</label> <br />
+                <input type="text" id="nome" {...register("nome")} /> <br />
+
+                <label htmlFor="poder">Poder</label> <br />
+                <input type="text" id="poder" {...register("poder")} /> <br />
+
+                <label htmlFor="fraqueza">Fraqueza</label> <br />
+                <input type="text" id="fraqueza" {...register("fraqueza")} /> <br />
+
+                <label htmlFor="historia">História</label> <br />
+                <textarea cols="23" id="historia" {...register("historia")}></textarea> <br />
+
+                <button type="submit">Cadastrar Heroi</button>
+            </form>
+
+            <br />
+
+            {
+                heroi &&
+                <Alert variant="primary">
+                    Nome: {heroi.nome} <br />
+                    Poder: {heroi.poder} <br />
+                    Fraqueza: {heroi.fraqueza} <br />
+                    História: {heroi.historia} <br />
+                </Alert>
+            }
         </div>
-      </div>
-    </section>
-  );
-};
+    );
+}
