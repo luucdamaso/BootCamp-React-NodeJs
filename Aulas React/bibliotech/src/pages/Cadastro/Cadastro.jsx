@@ -1,10 +1,12 @@
 import { Button, Container, Form } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import logoIcon from "../../assets/icons/livros.png";
 import googleIcon from "../../assets/icons/google-white.svg";
 import { useForm } from "react-hook-form";
 import { cadastrarEmailSenha, loginGoogle } from "../../firebase/auth";
 import { toast } from "react-hot-toast";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export const Cadastro = () => {
   const {
@@ -49,6 +51,11 @@ export const Cadastro = () => {
       });
   }
 
+  const usuariologado = useContext(AuthContext);
+
+  if (usuariologado !== null) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <Container fluid className="my-5">
