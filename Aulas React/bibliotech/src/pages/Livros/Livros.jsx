@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Button, Container, Table } from "react-bootstrap";
+import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { Loader } from "../../Components/Loader";
-import { getLivros } from "../../firebase/livros";
+import { deleteLivro, getLivros } from "../../firebase/livros";
 import"./Livros.css"
 
 export function Livros() {
@@ -14,6 +15,19 @@ export function Livros() {
             setLivros(busca)
         })
     }, []);
+
+    function onDeleteLivro(id, titulo) {
+      const deletar = window.confirm(`Tem certeza que deseja excluir o livro "${titulo}"?`)
+      if (deletar) {
+       deleteLivro(id).then(() =>{
+        toast.success(`${titulo} apagado com sucesso,`, {duration:2000, position:"bottom-right"})
+        getLivros().then(busca => {
+          setLivros(busca)
+          });
+       });
+
+      }
+   }
 
   return (
     <div className="livros">
@@ -35,6 +49,7 @@ export function Livros() {
               <th>Categoria</th>
               <th>ISBN</th>
               <th>Imagem</th>
+              <th>Ações</th>
             </tr>
           </thead>
           <tbody>
@@ -47,6 +62,24 @@ export function Livros() {
                         <td>{livro.isbn}</td>
                         <td>
                             <img src={livro.urlCapa} alt={livro.titulo} />
+                        </td>
+                        <td>
+                          <Button 
+                            as={Link} 
+                            to={`/livros/editar/${livro.id}`}
+                            variant="warning"
+                            size="sm"
+                            className="me-2"
+                          >
+                            <i className="bi bi-pencil-square"></i>
+                          </Button>
+                          <Button
+                            variant="danger"
+                            size="sm"
+                            onClick={() => onDeleteLivro(livro.id, livro.titulo)}
+                          >
+                            <i className="bi bi-trash-fill"></i>
+                          </Button>
                         </td>
                     </tr>
                 )
