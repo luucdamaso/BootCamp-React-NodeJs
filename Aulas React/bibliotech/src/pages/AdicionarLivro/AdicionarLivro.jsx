@@ -2,21 +2,35 @@ import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { addLivro } from "../../firebase/livros";
+import { addLivro, uploudCapaLivro } from "../../firebase/livros";
 
 export function AdicionarLivro() {
 
     const {register, handleSubmit, formState: {errors}} = useForm();
-
     const navigate = useNavigate();
 
     function onSubmit(data) {
-        addLivro(data).then(() => {
-          toast.success("Livro adicionado com sucesso!", { duration: 2000, position:"bottom-right"})
-          navigate('/livros');
+      const imagem = data.imagem[0];
+        if (imagem) {
+          const toastId = toast.loading("Upload da imagem...", {position:"top-right"});
+          uploudCapaLivro(imagem).then(url => {
+            toast.dismiss(toastId);
+            data.urlCapa = url;
+            delete data.imagem;
+            addLivro(data).then(() => {
+              toast.success("Livro adicionado com sucesso!", { duration: 2000, position:"bottom-right"})
+              navigate('/livros');
+            });
+          });
+        }else {
+          delete data.imagem;
+            addLivro(data).then(() => {
+              toast.success("Livro adicionado com sucesso!", { duration: 2000, position:"bottom-right"})
+              navigate('/livros');
         })
     }
-
+  }
+      
   return (
     <div className="adicionar-livro">
       <Container>
@@ -53,10 +67,7 @@ export function AdicionarLivro() {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Imagem da capa</Form.Label>
-                        <Form.Control type="url" className={errors.urlCapa && "is-invalid"} {...register("urlCapa", {required: "O endereço da capa é obrigatório!"})} />
-                        <Form.Text className="text-danger">
-                            {errors.urlCapa?.message}
-                        </Form.Text>
+                        <Form.Control type="file" accept=".png,.jpg,.jpeg,.gif" {...register("imagem")} />
                     </Form.Group>
           <Button type="submit" variant="success" >Adicionar</Button>
         </Form>

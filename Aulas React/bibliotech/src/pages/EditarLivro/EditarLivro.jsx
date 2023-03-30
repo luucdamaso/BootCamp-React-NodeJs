@@ -3,7 +3,7 @@ import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
-import { getLivro, updateLivro } from "../../firebase/livros";
+import { getLivro, updateLivro, uploudCapaLivro } from "../../firebase/livros";
 
 export function EditarLivro() {
 
@@ -14,10 +14,25 @@ export function EditarLivro() {
     const navigate = useNavigate();
 
     function onSubmit(data) {
-        updateLivro(id, data).then(() => {
-          toast.success("Livro editado com sucesso!", { duration: 2000, position:"bottom-right"})
-          navigate('/livros');
+        const imagem = data.imagem[0];
+        if (imagem) {
+            const toastId = toast.loading("upload da imagem...", {position:"top-right"})
+            uploudCapaLivro(imagem).then(url => {
+                toast.dismiss(toastId);
+                data.urlCapa = url;
+                delete data.imagem
+                updateLivro(id, data).then(() => {
+                    toast.success("Livro editado com sucesso!", { duration: 2000, position:"bottom-right"})
+                    navigate('/livros');
+            })
         })
+        } else {
+            updateLivro(id, data).then(() => {
+                toast.success("Livro editado com sucesso!", { duration: 2000, position:"bottom-right"})
+                navigate('/livros');
+        })
+        
+        }
     }
 
     useEffect(() => {
@@ -63,10 +78,7 @@ export function EditarLivro() {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Imagem da capa</Form.Label>
-                        <Form.Control type="url" className={errors.urlCapa && "is-invalid"} {...register("urlCapa", {required: "O endereço da capa é obrigatório!"})} />
-                        <Form.Text className="text-danger">
-                            {errors.urlCapa?.message}
-                        </Form.Text>
+                        <Form.Control type="file" accept=".png,.jpg,.jpeg,.gif" {...register("urlCapa", {required: "imagem"})} />
                     </Form.Group>
           <Button type="submit" variant="success" >Editar</Button>
         </Form>

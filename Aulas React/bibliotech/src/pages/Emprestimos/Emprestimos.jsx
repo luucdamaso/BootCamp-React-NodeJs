@@ -35,6 +35,7 @@ export function Emprestimos() {
                 <th>Titulo livro</th>
                 <th>Status</th>
                 <th>Data</th>
+                <th>Ações</th>
               </tr>
             </thead>
             <tbody>
@@ -56,6 +57,16 @@ export function Emprestimos() {
                       </Badge>
                     </td>
                     <td>{data}</td>
+                    <td>
+                      <Button 
+                        as={Link}
+                        to={`/emprestimos/editar/${e.id}`}
+                        variant="warning"
+                        size="sm"
+                        className="me-2">
+                      <i className="bi bi-pencil-square"></i>
+                      </Button>
+                    </td>
                   </tr>
                 );
               })}
