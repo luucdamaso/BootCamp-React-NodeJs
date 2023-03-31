@@ -7,6 +7,7 @@ import { auth } from "./firebase/config";
 import { AdicionarEmprestimo } from "./pages/AdicionarEmprestimo/AdicionarEmprestimo";
 import { AdicionarLivro } from "./pages/AdicionarLivro/AdicionarLivro";
 import { Cadastro } from "./pages/Cadastro/Cadastro";
+import { ChatRoom } from "./pages/Chat/Chat";
 import { EditarEmprestimo } from "./pages/EditarEmprestimo/EditarEmprestimo";
 import { EditarLivro } from "./pages/EditarLivro/EditarLivro";
 import { Emprestimos } from "./pages/Emprestimos/Emprestimos";
@@ -41,6 +42,7 @@ export function App() {
             <Route path="/emprestimos" element={<Emprestimos/>}/>
             <Route path="/emprestimos/adicionar" element={<AdicionarEmprestimo/>}/>
             <Route path="/emprestimos/editar/:id" element={<EditarEmprestimo/>}/>
+            <Route path="/chat" element={<ChatRoom/>} />
           </Route>
           <Route path="/login" element={<Login/>}/>
           <Route path="/cadastro" element={<Cadastro/>}/>

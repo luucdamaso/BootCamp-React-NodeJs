@@ -35,3 +35,4 @@ export async function uploudCapaLivro(imagem) {
     const result = await uploadBytes(imageRef, imagem);
     return await getDownloadURL(result.ref)
 }
+

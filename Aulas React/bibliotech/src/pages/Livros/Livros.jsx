@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { Button, Container, Table } from "react-bootstrap";
+import { Button, Container, Modal, Table } from "react-bootstrap";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { Loader } from "../../Components/Loader";
 import { deleteLivro, getLivros } from "../../firebase/livros";
 import "./Livros.css";
+
 
 export function Livros() {
   const [livros, setLivros] = useState(null);
@@ -31,6 +32,13 @@ export function Livros() {
       });
     }
   }
+
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const [livroSelecionado, setLivroSelecionado] = useState(null);
 
   return (
     <div className="livros">
@@ -65,7 +73,7 @@ export function Livros() {
                     <td>{livro.categoria}</td>
                     <td>{livro.isbn}</td>
                     <td>
-                      <img src={livro.urlCapa} alt={livro.titulo} />
+                      <img  src={livro.urlCapa} alt={livro.titulo} />
                     </td>
                     <td>
                       <Button
@@ -80,15 +88,53 @@ export function Livros() {
                       <Button
                         variant="danger"
                         size="sm"
+                        className="me-2"
                         onClick={() => onDeleteLivro(livro.id, livro.titulo)}
                       >
                         <i className="bi bi-trash-fill"></i>
+                      </Button>
+                      <Button
+                        variant="danger"
+                        size="sm"
+                        onClick={() => {
+                          setLivroSelecionado(livro);
+                          handleShow();
+                        }}
+                      >
+                        <i class="bi bi-three-dots"></i>
                       </Button>
                     </td>
                   </tr>
                 );
               })}
             </tbody>
+            <Modal show={show} onHide={handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>{livroSelecionado?.titulo}</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <p>Autor: {livroSelecionado?.autor}</p>
+                <p>Categoria: {livroSelecionado?.categoria}</p>
+                <p>ISBN: {livroSelecionado?.isbn}</p>
+                <img style={{width:"300px"}}
+                  src={livroSelecionado?.urlCapa}
+                  alt={livroSelecionado?.titulo}
+                />
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  Close
+                </Button>
+                <Button
+                  variant="warning"
+                  onClick={handleClose}
+                  as={Link}
+                  to={`/livros/editar/${livroSelecionado?.id}`}
+                >
+                  Editar
+                </Button>
+              </Modal.Footer>
+            </Modal>
           </Table>
         )}
       </Container>
