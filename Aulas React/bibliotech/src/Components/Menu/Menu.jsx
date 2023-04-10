@@ -36,6 +36,9 @@ export function Menu() {
             <Nav.Link as={Link} to="/chat">
               Chat
             </Nav.Link>
+            <Nav.Link as={Link} to="/loja">
+              Loja
+            </Nav.Link>
             <Nav.Link onClick={onLogout}>
               <i className="bi bi-box-arrow-right"></i>
             </Nav.Link>

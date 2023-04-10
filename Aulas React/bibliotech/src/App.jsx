@@ -15,6 +15,7 @@ import { Home } from "./pages/Home/Home";
 import { Livros } from "./pages/Livros/Livros";
 import { Login } from "./pages/Login/Login";
 import { Root } from "./pages/Root/Root";
+import { PaginaVendas } from "./pages/PaginaVendas/PaginaVendas";
 
 export function App() {
     const [usuarioLogado, setUsuarioLogado] = useState(null);
@@ -43,6 +44,7 @@ export function App() {
             <Route path="/emprestimos/adicionar" element={<AdicionarEmprestimo/>}/>
             <Route path="/emprestimos/editar/:id" element={<EditarEmprestimo/>}/>
             <Route path="/chat" element={<ChatRoom/>} />
+            <Route path="/loja" element={<PaginaVendas/>} />
           </Route>
           <Route path="/login" element={<Login/>}/>
           <Route path="/cadastro" element={<Cadastro/>}/>
