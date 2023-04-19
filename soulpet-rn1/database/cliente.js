@@ -25,7 +25,9 @@ const Cliente = connection.define("cliente", {
 
 // Associação 1:1 (One-to-One)
 
-Cliente.hasOne(Endereco); // Cliente tem um Endereço
+Cliente.hasOne(Endereco, { onDelete: "CASCADE" }); 
+// Cliente tem um Endereço
+// CASCADE = apagar o cliente, faz o endereço associado ser apagado junto.
 Endereco.belongsTo(Cliente); // Endereço pertence a um Cliente
 
 module.exports = Cliente;
