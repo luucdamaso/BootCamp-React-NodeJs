@@ -28,7 +28,7 @@ function data(dia, mes, ano) {
     console.log(`${dia}/${mes}/${ano}`)
 }
 
-data(10, 06, 1997);
+data(10, 6, 1997);
 console.log("\n");
 //5. Escreva uma função que receba um preço de um produto e um percen-tual. Retorne o valor aplicado ao desconto.
 
